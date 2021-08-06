@@ -1,6 +1,10 @@
+const { rastrearEncomendas } = require('correios-brasil');
+
 class TrackController {
-  getTrack(req, res) {
-    res.send('Funcionou');
+  async getTrack(req, res) {
+    const { code } = req.params;
+    const track = await rastrearEncomendas([code]);
+    res.json(track);
   }
 }
 

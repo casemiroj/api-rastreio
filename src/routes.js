@@ -3,6 +3,6 @@ const TrackController = require('./app/controllers/TrackController');
 
 const router = Router();
 
-router.get('/track', TrackController.getTrack);
+router.get('/track/:code', TrackController.getTrack);
 
 module.exports = router;
